@@ -1,0 +1,24 @@
+{
+  "projects": {
+    "default": "projetotrml"
+  },
+  "targets": {
+    "projetotrml": {
+      "hosting": {
+        "beta": [
+          "beta-projetotrml"
+        ],
+        "prod": [
+          "projetotrml"
+        ],
+        "partonerp": [
+          "partonerp"
+        ],
+        "partonerpinfo": [
+          "partonerpinfo"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

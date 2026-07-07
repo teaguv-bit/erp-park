@@ -1,0 +1,107 @@
+# =====================================================================
+# Segredos e ambientes
+# =====================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+credentials*.json
+service-account*.json
+firebase-adminsdk*.json
+
+# =====================================================================
+# Python
+# =====================================================================
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# =====================================================================
+# Node / Vite
+# =====================================================================
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =====================================================================
+# Backups e bancos
+# =====================================================================
+backups/
+backup/
+*.bak
+*.bak.*
+*.backup
+*.dump
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.zip
+
+# =====================================================================
+# Logs e temporários
+# =====================================================================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.cache
+*.pid
+
+# =====================================================================
+# Sistema operacional
+# =====================================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =====================================================================
+# IDE / local
+# =====================================================================
+.vscode/
+.idea/
+*.code-workspace
+.claude/settings.local.json
+
+# =====================================================================
+# Runtime local
+# =====================================================================
+*.lock.local
+coverage/
+htmlcov/
+
+# =====================================================================
+# Exclusões específicas do ProjetoTRML (auditoria de segurança)
+# =====================================================================
+# Cópia de código de produção que contém arquivo de ambiente com SEGREDOS
+# reais (chave privada de service account + TINY_TOKEN em env-informatica.yaml).
+origem-cloud/
+
+# Exports/dumps de produção (BigQuery) — dados de negócio, não código-fonte.
+imports/
+
+# Saídas de diagnóstico com possíveis snapshots de cliente / dados de pagamento.
+DIAG_*.txt
+
+# Armazenamento local de imagens de catálogo (binários gerados/baixados).
+storage/catalog-images/
+
+# scratch local de execucao de planos (nao versionar)
+.superpowers/

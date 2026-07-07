@@ -1,0 +1,5 @@
+.ui-empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-2); padding: var(--space-7) var(--space-4); color: var(--text-muted); }
+.ui-empty__icon { color: var(--text-subtle); }
+.ui-empty__title { font-size: var(--text-md); font-weight: 700; color: var(--text); }
+.ui-empty__msg { font-size: var(--text-sm); max-width: 42ch; }
+.ui-empty__action { margin-top: var(--space-2); }

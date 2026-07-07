@@ -1,0 +1,4 @@
+.ui-spinner { display: inline-block; border: 2px solid var(--border-strong); border-top-color: var(--accent); border-radius: 50%; animation: ui-spin .6s linear infinite; }
+.ui-skeleton { display: block; background: linear-gradient(90deg, var(--surface-2), var(--border), var(--surface-2)); background-size: 200% 100%; animation: ui-shimmer 1.2s ease-in-out infinite; }
+@keyframes ui-spin { to { transform: rotate(360deg); } }
+@keyframes ui-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }

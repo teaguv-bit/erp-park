@@ -1,0 +1,6 @@
+.ui-toasts { position: fixed; right: var(--space-4); bottom: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); z-index: var(--z-toast); }
+.ui-toast { min-width: 220px; max-width: 360px; padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); box-shadow: var(--shadow-md); font-size: var(--text-sm); cursor: pointer; border-left-width: 3px; }
+.ui-toast--success { border-left-color: var(--success); }
+.ui-toast--error   { border-left-color: var(--danger); }
+.ui-toast--info    { border-left-color: var(--info); }
+@media (max-width: 768px) { .ui-toasts { left: var(--space-3); right: var(--space-3); } .ui-toast { max-width: none; } }

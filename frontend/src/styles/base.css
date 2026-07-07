@@ -1,0 +1,30 @@
+/* frontend/src/styles/base.css — defaults de elemento sobre os tokens */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* { box-sizing: border-box; }
+
+h1 { font-size: var(--text-2xl); }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+h1, h2, h3, h4 { line-height: 1.25; letter-spacing: -0.01em; margin: 0 0 var(--space-3); }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Focus ring único e visível (acessibilidade) */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Números tabulares onde importa (aplicado via .num utilitário e em tabelas) */
+.num, [data-numeric] { font-variant-numeric: tabular-nums; }

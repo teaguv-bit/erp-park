@@ -1,0 +1,154 @@
+/* frontend/src/styles/tokens.css
+   Fonte única de design tokens do reskin. Importado antes de base.css e do
+   CSS legado. Aliases mantêm App.css/index.css funcionando durante o rollout. */
+
+:root {
+  color-scheme: light;
+
+  /* ---- Neutros (tema claro) ---- */
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f1f3f5;
+  --border: #e3e6ea;
+  --border-strong: #d1d6dc;
+  --text: #10151b;
+  --text-muted: #5b6472;
+  --text-subtle: #8a929e;
+
+  /* ---- Semânticas de status ---- */
+  --success: #16a34a;
+  --danger:  #dc2626;
+  --warning: #d97706;
+  --info:    #0ea5e9;
+  --neutral: #6b7280;
+  --success-soft: rgba(22,163,74,.12);
+  --danger-soft:  rgba(220,38,38,.12);
+  --warning-soft: rgba(217,119,6,.14);
+  --info-soft:    rgba(14,165,233,.12);
+  --neutral-soft: rgba(107,114,128,.14);
+
+  /* ---- Accent default (Parton = suprimentos). Trocado por [data-company]. ---- */
+  --accent: #0d9488;
+  --accent-strong: #0f766e;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(13,148,136,.10);
+
+  /* ---- Escala de espaçamento (base 4px, densa) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+
+  /* ---- Raios (menores = layout mais denso) ---- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* ---- Tipografia (densa; Inter já carregada no index.css) ---- */
+  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 13px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+
+  /* ---- Sombras (discretas) ---- */
+  --shadow-sm: 0 1px 2px rgba(16,21,27,.06);
+  --shadow-md: 0 4px 12px rgba(16,21,27,.10);
+  --shadow-lg: 0 18px 45px rgba(16,21,27,.16);
+
+  /* ---- Z-index ---- */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-modal: 1200;
+  --z-toast: 1300;
+
+  /* ---- Alturas de controle / toque ---- */
+  --control-h-sm: 28px;
+  --control-h-md: 32px;
+  --touch-min: 40px;
+
+  /* ---- Aliases de compatibilidade (ainda referenciados; migrar gradualmente) ---- */
+  --card: var(--surface);      /* ainda referenciado por *.jsx (QuotesModal, NewQuote, QuotesList, SavedQuotes, Separation) */
+  --panel: var(--surface);     /* ainda referenciado por *.jsx (QuotesModal, Separation, TinySyncPreview) */
+  --muted: var(--text-muted);  /* ainda referenciado por App.css e várias *.jsx */
+  --primary: var(--accent);    /* ainda referenciado por App.css (button[style*="var(--primary)"]) e index.css (--nav-bg) e várias *.jsx */
+  /* --primary-contrast removido na Fase 4: 0 usos em frontend/src */
+}
+
+/* ---- Tema escuro automático (segue o SO quando não há override) ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0d1117;
+    --surface: #151b23;
+    --surface-2: #1c232d;
+    --border: #262d38;
+    --border-strong: #333c49;
+    --text: #e6edf3;
+    --text-muted: #9aa4b2;
+    --text-subtle: #6b7482;
+
+    --success: #22c55e;
+    --danger:  #ef4444;
+    --warning: #f59e0b;
+    --info:    #38bdf8;
+    --neutral: #9aa4b2;
+  }
+}
+
+/* ---- Override manual: dark vence o media query ---- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d1117;
+  --surface: #151b23;
+  --surface-2: #1c232d;
+  --border: #262d38;
+  --border-strong: #333c49;
+  --text: #e6edf3;
+  --text-muted: #9aa4b2;
+  --text-subtle: #6b7482;
+
+  --success: #22c55e;
+  --danger:  #ef4444;
+  --warning: #f59e0b;
+  --info:    #38bdf8;
+  --neutral: #9aa4b2;
+}
+
+/* ---- Override manual: light vence o media query ---- */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f1f3f5;
+  --border: #e3e6ea;
+  --border-strong: #d1d6dc;
+  --text: #10151b;
+  --text-muted: #5b6472;
+  --text-subtle: #8a929e;
+}
+
+/* ---- Accent por empresa (default acima = parton) ---- */
+:root[data-company="park"] {
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(37,99,235,.10);
+}
+:root[data-company="parton"] {
+  /* Accent Parton = #0d9488 (teal). O logo oficial
+     (src/assets/catalog/parton-logo.png) é uma silhueta monocromática branca
+     sobre fundo transparente, sem matiz de marca extraível; por isso o accent
+     não é claramente derivável do logo e mantemos o teal da spec (#0d9488). */
+  --accent: #0d9488;
+  --accent-strong: #0f766e;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(13,148,136,.10);
+}
