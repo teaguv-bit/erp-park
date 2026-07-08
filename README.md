@@ -141,16 +141,34 @@ npm run build    # gera dist/, servido pelo próprio backend
 
 ## Screenshots
 
-<!--
-  Substitua pelos screenshots reais (sem dados de clientes):
+> Capturas do sistema em produção. Dados sensíveis (valores, nomes de clientes/vendedores, custo e margem) foram borrados propositalmente.
 
-  <p align="center">
-    <img src="docs/screenshots/dashboard.png" width="800" alt="Dashboard com filtros de período e vendedor" />
-  </p>
-  <p align="center">
-    <img src="docs/screenshots/orcamento.png" width="800" alt="Edição de orçamento (QuotesModal)" />
-  </p>
-  <p align="center">
-    <img src="docs/screenshots/separacao.png" width="800" alt="Fila de separação de pedidos" />
-  </p>
--->
+**Dashboard executivo de vendas** — KPIs, ranking de vendedores, participação no faturamento e insights automáticos (visão admin):
+
+<p align="center">
+  <img src="docs/screenshots/dashboard-executivo.png" width="800" alt="Dashboard executivo de vendas com KPIs, ranking e gráfico de participação" />
+</p>
+
+**Operações** — listagem de orçamentos e pedidos com abas por status comercial:
+
+<p align="center">
+  <img src="docs/screenshots/operacoes.png" width="800" alt="Listagem de operações com abas por status e filtros" />
+</p>
+
+**Novo orçamento** — formulário de pré-venda (cliente, itens, envio/frete, pagamento, NF):
+
+<p align="center">
+  <img src="docs/screenshots/novo-orcamento.png" width="800" alt="Formulário de criação de orçamento" />
+</p>
+
+**Separação** — fila de expedição por empresa, status e forma de envio:
+
+<p align="center">
+  <img src="docs/screenshots/separacao.png" width="800" alt="Fila de separação de pedidos" />
+</p>
+
+**Catálogo** — gestão de produtos com colunas financeiras restritas a admin:
+
+<p align="center">
+  <img src="docs/screenshots/catalogo.png" width="800" alt="Gestão de catálogo de produtos" />
+</p>
